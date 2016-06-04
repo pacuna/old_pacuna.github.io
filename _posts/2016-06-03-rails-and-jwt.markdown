@@ -8,7 +8,7 @@ date:   2016-06-03 23:36:12
 ## Introduction
 
 So, let's say that like me, you don't want to implement OAuth for communicating
-your Rails API calls, but you're still looking for something more safe that just
+your Rails API calls, but you're still looking for something safer that just
 create your own new sloppy token schema.
 Well, a pretty good alternative are [JWT](https://jwt.io/) (JSON Web Tokens).
 I'm not going to explain the concept in a very technical way because I'm all
@@ -21,7 +21,7 @@ about implementation, but basically it works like this:
   - The API decodes the token and authorizes the user to receive the responses.
 
 That's JWT at their basics. Of course there's a lot more technicalities behind them
-and there are a lot of good resources to learn them outside.
+and there are a lot of good resources out there to learn.
 
 ## Implementation
 
@@ -35,7 +35,7 @@ First, let's generate an API. I'm using ruby 2.3.1 and Rails 5.0.0.rc1:
   $ rails new my_api --api
 ```
 
-Now lets create our users table with secure password:
+Now let's create our users table with secure password:
 
 ```
   $ rails g model user email:string password_digest:string
@@ -232,7 +232,7 @@ $ curl http://localhost:4000/articles
 Great! If you hit that URL in you're browser you should also see the JSON response.
 If you don't see the response, make sure you're passing the correct credentials when getting the token
 
-You're final controller should look like this:
+Your final controller should look like this:
 
 ```
 class ArticlesController < ApplicationController
