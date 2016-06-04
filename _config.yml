@@ -1,0 +1,28 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+# relative_permalinks: true
+
+# Setup
+title:            Pablo Acuña
+tagline:          'Software Development'
+description:      "A Chilean Software Developer's journey to find and document best practices and the latest in programming. Author of <a href='https://leanpub.com/rails-on-docker'>Shipping Rails on Docker</a>"
+url:              http://pacuna.io
+baseurl:          /
+
+author:
+  name:           'Pablo Acuña'
+  url:            https://twitter.com/pabloacunar
+
+gems: [jekyll-paginate]
+paginate:         5
+paginate_path: "page:num"
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/pacuna
