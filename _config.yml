@@ -9,7 +9,7 @@ permalink:        pretty
 # Setup
 title:            Pablo Acuña
 tagline:          'Software Development'
-description:      "A Chilean Software Developer's journey to find and document best practices and the latest in programming. Author of <a href='https://leanpub.com/rails-on-docker'>Shipping Rails on Docker</a>"
+description:      "A Chilean Software Developer's journey to find and document best practices and the latest in programming. Author of <a href='https://leanpub.com/deploying-rails-with-kubernetes/'>Deploying Rails with Kubernetes</a>"
 url:              http://pacuna.io
 baseurl:          /
 
