@@ -525,3 +525,5 @@ In case you're curious, the full dataset is available below.
 | containers               | 1         | 
 | eda                      | 1         | 
 | mdx                      | 1         | 
+
+Special thanks to my editor wife, Becky Quintal whose demanding pursuit of engaging text led her to co-author this post.
