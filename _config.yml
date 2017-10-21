@@ -11,7 +11,7 @@ title:            Pablo Acuña
 tagline:          'Software Development'
 description:      "A Chilean Software Developer's journey to find and document best practices and the latest in programming. Author of <a href='https://www.amazon.com/Deploying-Rails-Docker-Kubernetes-ECS/dp/1484224140'>Deploying Rails with Docker, Kubernetes and ECS</a>"
 url:              http://pacuna.io
-baseurl:          /
+baseurl:          /pacuna.github.io
 
 author:
   name:           'Pablo Acuña'
