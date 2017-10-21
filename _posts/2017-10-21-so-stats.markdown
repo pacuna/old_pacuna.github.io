@@ -5,9 +5,69 @@ comments: true
 date:   2017-10-21 18:26
 ---
 
-Lately I've been thinking about which technologies are "trending" lately. Are employeers looking for more Java developers, data scientists, machine learning specialists or Javascript experts? And if you truly want to be a full stack developer, what should you be devoting your time to learning? My curiosity led me to write a quick script to crawl Stack Overflow and extract data from their current available job postings. Unfortunaly due to Stack Overflow's four week limit in active job posts, the data may not be as revealing as, say, six months to a year's worth of sampling.
+Lately I've been thinking about which technologies are "trending". Are employers looking for more Java developers, data scientists, machine learning specialists or Javascript experts? And if you truly want to be a full stack developer, what should you be devoting your time to learning?
 
-Running the script this afternoon returned the following results:
+My curiosity led me to write a quick script to crawl Stack Overflow and extract data from their current available job postings. Unfortunaly due to Stack Overflow's four week limit in active job posts, the data may not be as revealing as, say, six months' to a year's worth of sampling.
+
+Running the script this afternoon returned the following results. The top 20 technologies that are tagged most frequently in Stack Overflow's current job board postings are as follows.
+
+| Technology               |  Jobs     | 
+|--------------------------|-----------| 
+| java                     | 163       | 
+| javascript               | 153       | 
+| python                   | 90        | 
+| c#                       | 86        | 
+| reactjs                  | 80        | 
+| node.js                  | 62        | 
+| amazon-web-services      | 59        | 
+| linux                    | 56        | 
+| angularjs                | 53        | 
+| sql                      | 51        | 
+| php                      | 43        | 
+| c++                      | 43        | 
+| cloud                    | 42        | 
+| .net                     | 41        | 
+| css                      | 40        | 
+| html5                    | 33        | 
+| html                     | 32        | 
+| mysql                    | 30        | 
+| android                  | 29        | 
+| postgresql               | 28        | 
+
+How did I get these numbers?
+
+```
+require 'nokogiri'
+require 'open-uri'
+require 'byebug'
+require 'terminal-table'
+
+pages = *(1..27)
+data = {}
+
+pages.each do |page|
+  puts "Scrapping page #{page}\n"
+  doc = Nokogiri::HTML(open("https://stackoverflow.com/jobs?pg=#{page}"))
+
+  doc.css('a.post-tag').each do |link|
+    text = link.children.text
+    if data.key?(text)
+      data[text] += 1
+    else
+      data[text] = 1
+    end
+  end
+end
+
+rows = data.sort_by { |a| a[1] }.reverse
+table = Terminal::Table.new rows: rows
+
+puts table
+```
+
+As you can see that's Ruby...So, yeah. Not exactly encouraging results.
+
+In case you're curious, the full dataset is available below.
 
 | Technology               |  Jobs     | 
 |--------------------------|-----------| 
@@ -465,6 +525,3 @@ Running the script this afternoon returned the following results:
 | containers               | 1         | 
 | eda                      | 1         | 
 | mdx                      | 1         | 
-
-
-
