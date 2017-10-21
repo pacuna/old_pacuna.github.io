@@ -36,7 +36,7 @@ Running the script this afternoon returned the following results. The top 20 tec
 
 How did I get these numbers?
 
-```
+```ruby
 require 'nokogiri'
 require 'open-uri'
 require 'byebug'
